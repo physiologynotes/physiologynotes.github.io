@@ -1,0 +1,20 @@
+[
+  {
+    "id": "phys-001",
+    "title": "Cardiovascular System Lecture Notes",
+    "description": "Comprehensive high-yield notes covering cardiac cycle, ECG, and blood pressure regulation. Perfect for university exams.",
+    "price": "₹299",
+    "preview_url": "previews/cvs-preview.pdf",
+    "razorpay_link": "https://rzp.io/l/your_cvs_link",
+    "in_stock": true
+  },
+  {
+    "id": "phys-002",
+    "title": "Renal Physiology Advanced Guide",
+    "description": "Detailed mechanisms of glomerular filtration, countercurrent multiplier system, and acid-base balance.",
+    "price": "₹199",
+    "preview_url": "previews/renal-preview.pdf",
+    "razorpay_link": "https://rzp.io/l/your_renal_link",
+    "in_stock": false
+  }
+]

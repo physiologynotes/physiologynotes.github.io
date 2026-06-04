@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physiology RECAP | Dr. S. Bhunia</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 scroll-smooth">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-red-600 tracking-wide">Physiology RECAP</a>
+            <div class="hidden md:flex space-x-6 font-medium">
+                <a href="#about" class="hover:text-red-600 transition">About Me</a>
+                <a href="#channel" class="hover:text-red-600 transition">Channel</a>
+                <a href="#shop" class="hover:text-red-600 transition">Shop Notes</a>
+                <a href="#subscribe" class="hover:text-red-600 transition">Subscribe</a>
+            </div>
+            <button onclick="toggleCartModal()" class="relative bg-red-600 text-white px-4 py-2 rounded-lg font-semibold flex items-center space-x-2 shadow hover:bg-red-700 transition cursor-pointer">
+                <span>🛒 Cart</span>
+                <span id="cart-count" class="bg-white text-red-600 text-xs rounded-full px-2 py-0.5">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-32 pb-20 bg-gradient-to-r from-red-50 to-orange-50 text-center px-4">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-4">Master Physiology Simply</h1>
+        <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">High-yield lecture notes and simplified conceptual breakdowns by Dr. S. Bhunia.</p>
+        <a href="#shop" class="bg-red-600 text-white px-8 py-3 rounded-xl font-bold shadow-lg hover:bg-red-700 transition">Browse Digital Notes</a>
+    </header>
+
+    <!-- About Me Section -->
+    <section id="about" class="max-w-5xl mx-auto px-4 py-20 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <div class="w-full h-80 bg-gray-200 rounded-2xl shadow-inner flex items-center justify-center text-gray-500 font-medium">
+                Dr. S. Bhunia Photo Placeholder
+            </div>
+        </div>
+        <div>
+            <h2 class="text-3xl font-bold mb-4 border-b-4 border-red-600 w-fit pb-1">Dr. S. Bhunia</h2>
+            <p class="text-gray-600 leading-relaxed mb-4">Welcome to Physiology RECAP! As a passionate educator, my mission is to break down complex medical and biological physiology concepts into easily digestible, visual, and high-yield reviews.</p>
+            <p class="text-gray-600 leading-relaxed">Here, you can find structure-oriented handwritten and comprehensive analytical notes explicitly engineered to help medical, dental, nursing, and science students ace their examinations.</p>
+        </div>
+    </section>
+
+    <!-- YouTube Channel Section -->
+    <section id="channel" class="bg-gray-900 text-white py-20 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-2">Physiology RECAP on YouTube</h2>
+            <p class="text-gray-400 mb-10">Watch full structured digital lectures instantly.</p>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-10">
+                <div class="aspect-video rounded-xl overflow-hidden shadow-2xl">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed?listType=user_uploads&list=PhysiologyRECAP" allowfullscreen></iframe>
+                </div>
+                <div class="flex flex-col justify-center text-left space-y-4 px-4">
+                    <h3 class="text-xl font-bold text-red-400">Never Miss a Lecture</h3>
+                    <p class="text-gray-300">New conceptual segments and rapid exam preparation crash courses are uploaded weekly. Subscribe to sync up your notes with ongoing online visual streams.</p>
+                    <a href="https://www.youtube.com/@PhysiologyRECAP" target="_blank" class="bg-red-600 w-fit text-white px-6 py-2.5 rounded-lg font-bold hover:bg-red-700 transition">Subscribe on YouTube</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop" class="max-w-7xl mx-auto px-4 py-20">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-2">Study Materials & Notes Store</h2>
+            <p class="text-gray-600">Download pristine PDF packages instantly following a secure check-out transaction via Razorpay.</p>
+        </div>
+        
+        <div id="notes-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+    </section>
+
+    <!-- Subscription Section -->
+    <section id="subscribe" class="bg-gradient-to-br from-red-600 to-red-800 text-white py-16 px-4">
+        <div class="max-w-md mx-auto text-center">
+            <h3 class="text-2xl font-bold mb-2">Join the Physiology Newsletter</h3>
+            <p class="text-red-100 mb-6">Get updates whenever Dr. Bhunia uploads premium new notes modules or critical sample updates.</p>
+            <form action="https://formspree.io/f/your_formspree_id" method="POST" class="space-y-3">
+                <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 rounded-lg text-gray-900 focus:outline-none">
+                <input type="email" name="email" placeholder="Your Email Address" required class="w-full px-4 py-3 rounded-lg text-gray-900 focus:outline-none">
+                <button type="submit" class="w-full bg-gray-900 text-white font-bold py-3 rounded-lg hover:bg-black transition cursor-pointer">Register Updates</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Note Preview Modal -->
+    <div id="preview-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-2xl w-full max-w-4xl h-[85vh] flex flex-col overflow-hidden shadow-2xl">
+            <div class="p-4 border-b flex justify-between items-center bg-gray-50">
+                <h3 id="preview-title" class="text-lg font-bold text-gray-900">Document Preview</h3>
+                <button onclick="closePreview()" class="text-gray-500 hover:text-black font-bold text-xl p-1 cursor-pointer">&times; Close</button>
+            </div>
+            <div class="flex-1 bg-gray-100">
+                <iframe id="preview-frame" class="w-full h-full border-none" src=""></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Side Modal -->
+    <div id="cart-modal" class="fixed inset-0 bg-black/50 z-50 hidden justify-end">
+        <div class="bg-white w-full max-w-md h-full p-6 flex flex-col shadow-2xl">
+            <div class="flex justify-between items-center pb-4 border-b">
+                <h3 class="text-xl font-bold">Your Checkout Cart</h3>
+                <button onclick="toggleCartModal()" class="text-2xl font-bold text-gray-500 hover:text-black cursor-pointer">&times;</button>
+            </div>
+            <div id="cart-items" class="flex-1 overflow-y-auto py-4 space-y-4"></div>
+            <div class="border-t pt-4">
+                <div class="flex justify-between font-bold text-lg mb-4">
+                    <span>Total Amount:</span>
+                    <span id="cart-total">₹0</span>
+                </div>
+                <button id="checkout-btn" onclick="processCartCheckout()" class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-bold text-center block transition shadow-md cursor-pointer">Proceed to Secure Payment</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
