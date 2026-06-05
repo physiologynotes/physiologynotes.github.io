@@ -75,10 +75,11 @@
         <div class="max-w-md mx-auto text-center">
             <h3 class="text-2xl font-bold mb-2">Join the Physiology Newsletter</h3>
             <p class="text-red-100 mb-6">Get updates whenever Dr. Bhunia uploads premium new notes modules or critical sample updates.</p>
-            <form action="https://formspree.io/f/your_formspree_id" method="POST" class="space-y-3">
-                <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 rounded-lg text-gray-900 focus:outline-none">
-                <input type="email" name="email" placeholder="Your Email Address" required class="w-full px-4 py-3 rounded-lg text-gray-900 focus:outline-none">
-                <button type="submit" class="w-full bg-gray-900 text-white font-bold py-3 rounded-lg hover:bg-black transition cursor-pointer">Register Updates</button>
+            <form id="newsletter-form" class="space-y-3">
+                <input type="text" name="name" id="nl-name" placeholder="Your Name" required class="w-full px-4 py-3 rounded-lg text-gray-900 focus:outline-none">
+                <input type="email" name="email" id="nl-email" placeholder="Your Email Address" required class="w-full px-4 py-3 rounded-lg text-gray-900 focus:outline-none">
+                <button type="submit" id="nl-submit" class="w-full bg-gray-900 text-white font-bold py-3 rounded-lg hover:bg-black transition cursor-pointer">Register Updates</button>
+                <p id="nl-message" class="text-sm mt-2 hidden"></p>
             </form>
         </div>
     </section>
@@ -126,6 +127,46 @@
             </div>
         </div>
     </div>
+
+    <!-- Newsletter -> Google Sheet handler -->
+    <script>
+      (function () {
+        // Paste your Apps Script web-app URL here (it ends with /exec):
+        var NEWSLETTER_ENDPOINT = "PASTE_YOUR_APPS_SCRIPT_WEBAPP_URL";
+
+        var form = document.getElementById('newsletter-form');
+        if (!form) return;
+        var msg = document.getElementById('nl-message');
+        var btn = document.getElementById('nl-submit');
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var name  = document.getElementById('nl-name').value.trim();
+          var email = document.getElementById('nl-email').value.trim();
+          if (!name || !email) return;
+
+          btn.disabled = true;
+          btn.textContent = 'Submitting...';
+          msg.classList.add('hidden');
+
+          fetch(NEWSLETTER_ENDPOINT, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: new URLSearchParams({ name: name, email: email })
+          }).then(function () {
+            form.reset();
+            msg.textContent = 'Thanks for subscribing!';
+            msg.className = 'text-sm mt-2 text-white font-semibold';
+          }).catch(function () {
+            msg.textContent = 'Something went wrong — please try again.';
+            msg.className = 'text-sm mt-2 text-yellow-200 font-semibold';
+          }).then(function () {
+            btn.disabled = false;
+            btn.textContent = 'Register Updates';
+          });
+        });
+      })();
+    </script>
 
     <script src="script.js"></script>
 </body>
