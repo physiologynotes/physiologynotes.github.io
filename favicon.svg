@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="badge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4513c"/>
+      <stop offset="0.55" stop-color="#dc2626"/>
+      <stop offset="1" stop-color="#b3160f"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- rounded-square badge -->
+  <rect x="32" y="32" width="448" height="448" rx="116" fill="url(#badge)"/>
+  <rect x="32" y="32" width="448" height="448" rx="116" fill="url(#shine)"/>
+
+  <!-- ECG / pulse waveform -->
+  <path d="M 78 268 L 176 268 L 212 268 L 240 172 L 282 356 L 318 132 L 352 268 L 380 268 L 434 268"
+        fill="none" stroke="#ffffff" stroke-width="30"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- monitor blip -->
+  <circle cx="434" cy="268" r="20" fill="#ffffff"/>
+</svg>
