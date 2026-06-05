@@ -1,10 +1,10 @@
 [
   {
     "id": "phys-001",
-    "title": "Cardiovascular System Lecture Notes",
-    "description": "Comprehensive high-yield notes covering cardiac cycle, ECG, and blood pressure regulation. Perfect for university exams.",
+    "title": "Nervous System Classification",
+    "description": "A master textbook-style study guide on the human nervous system, featuring clear anatomical classifications, clinical insights, and an interactive self-assessment bank.",
     "price": "₹299",
-    "preview_url": "previews/cvs-preview.pdf",
+    "preview_url": "previews/Nervous_system_preview.pdf",
     "razorpay_link": "https://rzp.io/l/your_cvs_link",
     "in_stock": true
   },
